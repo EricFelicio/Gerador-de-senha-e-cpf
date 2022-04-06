@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #181818;
+    background-color: #181818 !important;
     width: 100% !important;
     height: 100vh;
     display: flex;
@@ -141,13 +141,18 @@ input[type=range] {
     margin-top: 30px;
     font-size: 20px;
     text-align: center;
-    display: flex;
+    display: block;
     flex-direction: column;
 }
 
-.return-value.hide {
-    display: none;
+.return-value {
+    display: flex;
 }
+
+.hide {
+  display:none;
+}
+
 .return-value .span-2 {
     margin-right: 5px;
 }
