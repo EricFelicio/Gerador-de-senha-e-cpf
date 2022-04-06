@@ -29,15 +29,20 @@ function botaoGerarSenha() {
 
     let pass = "";
 
+    //para numero gerar até os caracteres informados pelo input range
     for(let i = 0, n = charset.length; i < inputrange.value; ++i){
         pass += charset.charAt(Math.floor(Math.random() * n ));
     }
 
+    //excluir o .hide com display:none do css
    esconde.classList.remove("hide");
+   //alocar a senha gerada no html
     senha.innerHTML = pass;
+    //alocar senha na let nova senha
     novasenha = pass;
 }
 
+    //função para copiar a novasenha
 function copiar() {
     navigator.clipboard.writeText(novasenha);
 }
