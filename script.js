@@ -25,9 +25,13 @@ function botaoGerarSenha() {
 
    esconde.classList.remove("hide");//excluir o .hide com display:none do css
     senha.innerHTML = pass;//alocar a senha gerada no html
+
     novasenha = pass;//alocar senha na let nova senha
+
 }//função para procesar o clique do botão
 
 function copiar() {
     navigator.clipboard.writeText(novasenha);
 } //função para copiar a novasenha
+
+

@@ -24,6 +24,18 @@
                     <span id="senha" class="span-2 senha"></span>
                     <button id="copiar" class="span-2 btn btn-primary btn-sm" onclick="copiar()">Copiar</button>
                 </div>
+                <div class="container">
+                    <h1>Gerador de CPF válido</h1>
+                    <form name="form_main">
+                      <label for="numero">Número:</label> 
+                      <input type="text" name="numero" id="numero" class="form-control"/><br /> 
+                    <div class="display">
+                        <label class="display column" for="mascara">Máscara</label>
+                        <input class="display column"  name="mascara" value="mascara" id="mascara" type="checkbox"> 
+                    </div>
+                      <input name="button" value="Gerar" onclick="gera()" type="button">
+                    </form>
+                </div>
             </div>
         </section>
     </main>

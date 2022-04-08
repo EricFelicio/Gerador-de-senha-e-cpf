@@ -164,3 +164,13 @@ input[type=range] {
     margin: 8px;
     line-height: 35px;
 }
+
+
+.display {
+  display: inline-block;
+}
+
+.display.column {
+  width: 12%;
+  display: inline-flex;
+}
