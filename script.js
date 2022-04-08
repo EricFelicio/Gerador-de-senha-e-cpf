@@ -1,48 +1,33 @@
-//setando let do valor do input range para inputrange
-let inputrange = document.querySelector("#inputrange");
-//setando let da informação do botão para button
-let button = document.querySelector("#button");
+let inputrange = document.querySelector("#inputrange"); //setando let do valor do input range para inputrange
+let button = document.querySelector("#button"); //setando let da informação do botão para button
 
-//setando let para campos de caracteres para alocar o valor do input range
-let caracteres = document.querySelector("#caracteres");
-//setando let para senha da senha que é gerada e alocando no campo senha
-let senha = document.querySelector("#senha");
+let caracteres = document.querySelector("#caracteres");//setando let para campos de caracteres para alocar o valor do input range
+let senha = document.querySelector("#senha");//setando let para senha da senha que é gerada e alocando no campo senha
 
-//setando let para campos que necessitam iniciar display:none
-let esconde = document.querySelector(".hide");
+let esconde = document.querySelector(".hide");//setando let para campos que necessitam iniciar display:none
 
-//setando let para senha
-let charset = "1234567890!@#$%&qwertyuiopasdfghjklçzxcvbnm";
-//setando let para a nova senha que é gerada
-let novasenha = "";
+let charset = "1234567890!@#$%&qwertyuiopasdfghjklçzxcvbnm";//setando let para senha
+let novasenha = "";//setando let para a nova senha que é gerada
 
-//mostrar os caracteres do input range
-caracteres.innerHTML = inputrange.value;
+caracteres.innerHTML = inputrange.value;//mostrar os caracteres do input range
 
-//valor dos caracteres acompanhando ao vivo o input range.
 inputrange.oninput = function(){
     caracteres.innerHTML = this.value;
-}
+}//valor dos caracteres acompanhando ao vivo o input range.
 
-//função para procesar o clique do botão
 function botaoGerarSenha() {
 
     let pass = "";
 
-    //para numero gerar até os caracteres informados pelo input range
     for(let i = 0, n = charset.length; i < inputrange.value; ++i){
         pass += charset.charAt(Math.floor(Math.random() * n ));
-    }
+    }//para numero gerar até os caracteres informados pelo input range
 
-    //excluir o .hide com display:none do css
-   esconde.classList.remove("hide");
-   //alocar a senha gerada no html
-    senha.innerHTML = pass;
-    //alocar senha na let nova senha
-    novasenha = pass;
-}
+   esconde.classList.remove("hide");//excluir o .hide com display:none do css
+    senha.innerHTML = pass;//alocar a senha gerada no html
+    novasenha = pass;//alocar senha na let nova senha
+}//função para procesar o clique do botão
 
-    //função para copiar a novasenha
 function copiar() {
     navigator.clipboard.writeText(novasenha);
-}
+} //função para copiar a novasenha
