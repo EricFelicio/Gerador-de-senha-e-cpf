@@ -15,7 +15,7 @@ inputrange.oninput = function(){
     caracteres.innerHTML = this.value;
 }//valor dos caracteres acompanhando ao vivo o input range.
 
-function botaoGerarSenha() {
+function GerarSenha() {
 
     let pass = "";
 
@@ -39,11 +39,14 @@ let create_array = (total, numero) => Array.from(Array(total), () => number_rand
 let number_random = (number) => (Math.round(Math.random() * number));
 let mod = (dividendo, divisor) => Math.round(dividendo - (Math.floor(dividendo / divisor) * divisor));
 
-function cpf() {
+let esconde2 = document.querySelector(".esconde2");
+
+function cpf(){
 
   let total_array = 9;
   let n = 9;
   let [n1, n2, n3, n4, n5, n6, n7, n8, n9] = create_array(total_array, n);
+  let ccc = "";
 
   let d1 = n9 * 2 + n8 * 3 + n7 * 4 + n6 * 5 + n5 * 6 + n4 * 7 + n3 * 8 + n2 * 9 + n1 * 10;
   d1 = 11 - (mod(d1, 11));
@@ -53,12 +56,18 @@ function cpf() {
   d2 = 11 - (mod(d2, 11));
   if (d2 >= 10) d2 = 0;
 
-    if (document.form_main.mascara.checked)
+  esconde2.classList.remove("hide");
+
+    if (mascara.checked)
         return `${n1}${n2}${n3}.${n4}${n5}${n6}.${n7}${n8}${n9}-${d1}${d2}`;
     else
-        return `${n1}${n2}${n3}${n4}${n5}${n6}${n7}${n8}${n9}${d1}${d2}`;
+        return `${n1}${n2}${n3}${n4}${n5}${n6}${n7}${n8}${n9}${d1}${d2}`;    
 }
 
 function gera() {
-    document.form_main.numero.value = cpf();
+    numero.innerHTML = cpf();
 }
+
+function copiar2() {
+    navigator.clipboard.writeText(novocpf);
+} //função para copiar a novasenha

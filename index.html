@@ -16,7 +16,7 @@
                 <div class="input-range">
                     <span class="span-1">Tamanhado <span id="caracteres"></span> caracteres</span>
                     <input id="inputrange" class="range" type="range" min="10" value="20" max="30">
-                    <button id="button" class="button" onclick="botaoGerarSenha()">Gerar senha</button>
+                    <button id="button" class="button" onclick="GerarSenha()">Gerar senha</button>
 
                 </div>
                 <div class="return-value hide">
@@ -26,14 +26,14 @@
                 </div>
                 <div class="container">
                     <h1>Gerador de CPF válido</h1>
-                    <form name="form_main">
+                    <label class="display column span-1" for="mascara">Máscara</label>
+                    <input class="display column2"  name="mascara" value="mascara" id="mascara" type="checkbox">
+                    <input name="button" value="Gerar" id="button" class="button" onclick="gera()" type="button">
+                    <form name="form_main" class="esconde2 hide">
                       <label for="numero">Número:</label> 
-                      <input type="text" name="numero" id="numero" class="form-control"/><br /> 
-                    <div class="display">
-                        <label class="display column" for="mascara">Máscara</label>
-                        <input class="display column"  name="mascara" value="mascara" id="mascara" type="checkbox"> 
-                    </div>
-                      <input name="button" value="Gerar" onclick="gera()" type="button">
+                      <span id="numero" name="numero" class="span-2 senha"></span>
+                        <div class="display">
+                        </div>
                     </form>
                 </div>
             </div>
